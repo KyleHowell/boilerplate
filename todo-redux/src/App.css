@@ -22,3 +22,11 @@
     transform: translateY(0px)
   }
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.list-header {
+  
+}

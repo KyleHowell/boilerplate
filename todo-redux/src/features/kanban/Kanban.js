@@ -8,13 +8,12 @@ import {
   moveNote,
   selectLists,
 } from './kanbanSlice';
+import ListHeader from './ListHeader';
 import styles from './Kanban.module.css';
 
 export function Kanban() {
   const lists = useSelector(selectLists);
   const dispatch = useDispatch();
-  console.log('taco');
-  console.log(lists);
 
   return (
     <div className={styles.wrapper}>
@@ -22,7 +21,10 @@ export function Kanban() {
         lists.map(list => {
           return (
             <div className={styles.list} key={list.name}>
-              {list.name}
+              <ListHeader
+                name={list.name}
+                onSubmit={p => dispatch(editList(p))}
+              />
             </div>
           );
         })
