@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const kanbanSlice = createSlice({
   name: 'kanban',
   initialState: {
+    sidebar: false,
     lists: [{name: 'test', notes: ['taco', 'burrito']}, {name: 'test2', notes: []}],
   },
   reducers: {
@@ -31,6 +32,9 @@ export const kanbanSlice = createSlice({
       const noteIndex = list.notes.findIndex(n => n === action.payload.note);
       list.notes.splice(noteIndex, 1);
     },
+    toggleSidebar: state => {
+      state.sidebar = !state.sidebar;
+    },
     // moveNote: (state, action) => {
     //   const oldList = state.lists.find(l => l.name === action.payload.oldList);
     //   const oldNoteIndex = oldList.notes.findIndex(n => n === action.payload.note);
@@ -43,8 +47,9 @@ export const kanbanSlice = createSlice({
   },
 });
 
-export const { addList, editList, deleteList, addNote, editNote, deleteNote } = kanbanSlice.actions;
+export const { addList, editList, deleteList, addNote, editNote, deleteNote, toggleSidebar } = kanbanSlice.actions;
 
 export const selectLists = state => state.kanban.lists;
+export const selectSidebar = state => state.kanban.sidebar;
 
 export default kanbanSlice.reducer;

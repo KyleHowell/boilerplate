@@ -22,7 +22,22 @@
 }
 
 .actionButtons {
-  
+
+}
+
+.header {
+  height: 50px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.toggleSidebar {
+  cursor: pointer;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 h4 {

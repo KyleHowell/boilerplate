@@ -1,17 +1,29 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {addList, editList, deleteList, addNote, editNote, deleteNote, selectLists} from './kanbanSlice';
+import {addList, editList, deleteList, addNote, editNote, deleteNote, toggleSidebar, selectSidebar, selectLists} from './kanbanSlice';
 import ListHeader from './ListHeader';
 import Note from './Note';
 import AddNote from './AddNote';
+import Sidebar from './Sidebar';
 import AddList from './AddList';
 import styles from './Kanban.module.css';
 
 export function Kanban() {
   const lists = useSelector(selectLists);
+  const sidebarVisible = useSelector(selectSidebar);
   const dispatch = useDispatch();
 
   return (
+    <>
+    <div className={styles.header}>
+      Trello
+      <div
+        className={styles.toggleSidebar}
+        onClick={() => dispatch(toggleSidebar())}>
+        ... ShowMenu
+      </div>
+    </div>
+    <Sidebar visible={sidebarVisible} onClose={() => dispatch(toggleSidebar())}/>
     <div className={styles.wrapper}>
       {
         lists.map(list => {
@@ -44,5 +56,6 @@ export function Kanban() {
         <AddList onSubmit={p => dispatch(addList(p))}/>
       </div>
     </div>
+  </>
   );
 }
