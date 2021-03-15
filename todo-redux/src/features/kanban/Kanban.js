@@ -1,16 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  addList,
-  editList,
-  addNote,
-  editNote,
-  moveNote,
-  selectLists,
-} from './kanbanSlice';
+import {addList, editList, deleteList, addNote, editNote, deleteNote, selectLists} from './kanbanSlice';
 import ListHeader from './ListHeader';
 import Note from './Note';
 import AddNote from './AddNote';
+import AddList from './AddList';
 import styles from './Kanban.module.css';
 
 export function Kanban() {
@@ -25,6 +19,7 @@ export function Kanban() {
             <div className={styles.list} key={list.name}>
               <ListHeader
                 name={list.name}
+                onDelete={p => dispatch(deleteList(p))}
                 onSubmit={p => dispatch(editList(p))}
               />
               {
@@ -33,6 +28,7 @@ export function Kanban() {
                     <Note
                       key={note}
                       list={list.name}
+                      onDelete={p => dispatch(deleteNote(p))}
                       onSubmit={p => dispatch(editNote(p))}
                       note={note}
                     />
@@ -44,6 +40,9 @@ export function Kanban() {
           );
         })
       }
+      <div className={styles.list}>
+        <AddList onSubmit={p => dispatch(addList(p))}/>
+      </div>
     </div>
   );
 }

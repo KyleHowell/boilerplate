@@ -10,6 +10,12 @@ export default class ListHeader extends React.Component {
     };
   }
 
+  onDelete = () => {
+    if (window.confirm('Are you sure you want to delete this list?')) {
+      this.props.onDelete({'name': this.props.name});
+    }
+  }
+
   onFinishedEditing = e => {
     e.preventDefault();
     this.props.onSubmit({
@@ -24,11 +30,12 @@ export default class ListHeader extends React.Component {
     const inputClass = this.state.editing ? "header-input" : "hidden";
     return (
       <div className={styles.listHeader}>
-        <div
-          className={headerClass}
-          onClick={() => this.setState({editing: true})}
-        >
+        <div className={headerClass}>
           {this.props.name}
+          <div className={styles.actionButtons}>
+            <button onClick={() => this.setState({editing: true})}>edit</button>
+            <button onClick={this.onDelete}>X</button>
+          </div>
         </div>
         <form onSubmit={this.onFinishedEditing}>
           <input

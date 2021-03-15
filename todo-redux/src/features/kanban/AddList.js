@@ -1,22 +1,21 @@
 import React from 'react';
 import styles from './Kanban.module.css';
 
-export default class ListHeader extends React.Component {
+export default class AddList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       editing: false,
-      note: ''
+      name: ''
     };
   }
 
   onFinishedEditing = e => {
     e.preventDefault();
     this.props.onSubmit({
-      'listName': this.props.list,
-      'note': this.state.note
+      'name': this.state.name
     });
-    this.setState({editing: false, note: ''});
+    this.setState({editing: false, name: ''});
   }
 
   render() {
@@ -28,13 +27,13 @@ export default class ListHeader extends React.Component {
           className={buttonClass}
           onClick={() => this.setState({editing: true})}
         >
-          + Add another card
+          + Add another list
         </button>
         <form onSubmit={this.onFinishedEditing}>
           <input
             className={inputClass}
-            onChange={e => this.setState({note: e.target.value})}
-            value={this.state.note}
+            onChange={e => this.setState({name: e.target.value})}
+            value={this.state.name}
           />
         </form>
       </div>

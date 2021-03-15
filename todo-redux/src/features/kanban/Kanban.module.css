@@ -17,6 +17,12 @@
 .listHeader {
   text-align: center;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actionButtons {
+  
 }
 
 h4 {

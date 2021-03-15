@@ -7,8 +7,17 @@ export default class Note extends React.Component {
     this.state = {
       editing: false,
       note: this.props.note,
-      oldNote: this.props.note,
     };
+  }
+
+  onDelete = () => {
+    if (window.confirm('Are you sure you want to delete this note?')) {
+      this.props.onDelete({
+        'listName': this.props.list,
+        'note': this.props.note
+      });
+      this.setState({note: ''});
+    }
   }
 
   onFinishedEditing = e => {
@@ -18,7 +27,7 @@ export default class Note extends React.Component {
       'listName': this.props.list,
       'oldNote': this.props.note,
     });
-    this.setState({editing: false});
+    this.setState({editing: false, note: ''});
   }
 
   render() {
@@ -26,11 +35,12 @@ export default class Note extends React.Component {
     const inputClass = this.state.editing ? "header-input" : "hidden";
     return (
       <div className={styles.listHeader}>
-        <div
-          className={headerClass}
-          onClick={() => this.setState({editing: true})}
-        >
-          {this.props.note}
+        <div className={headerClass}>
+          <div>{this.props.note}</div>
+          <div className={styles.actionButtons}>
+            <button onClick={() => this.setState({editing: true})}>edit</button>
+            <button onClick={this.onDelete}>X</button>
+          </div>
         </div>
         <form onSubmit={this.onFinishedEditing}>
           <input
