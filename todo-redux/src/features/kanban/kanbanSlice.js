@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const kanbanSlice = createSlice({
   name: 'kanban',
   initialState: {
-    lists: [{name: 'test', notes: []}, {name: 'test2', notes: []}],
+    lists: [{name: 'test', notes: ['taco', 'burrito']}, {name: 'test2', notes: []}],
   },
   reducers: {
     addList: (state, action) => {
@@ -21,7 +21,7 @@ export const kanbanSlice = createSlice({
       const list = state.lists.find(l => l.name === action.payload.listName);
       const noteIndex = list.notes.findIndex(n => n === action.payload.oldNote);
       // replace the old note with the new note
-      list.notes.splice(noteIndex, noteIndex, action.payload.newNote);
+      list.notes[noteIndex] = action.payload.newNote;
     },
     moveNote: (state, action) => {
       const oldList = state.lists.find(l => l.name === action.payload.oldList);

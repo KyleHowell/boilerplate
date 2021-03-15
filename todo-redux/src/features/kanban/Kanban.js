@@ -9,6 +9,7 @@ import {
   selectLists,
 } from './kanbanSlice';
 import ListHeader from './ListHeader';
+import Note from './Note';
 import styles from './Kanban.module.css';
 
 export function Kanban() {
@@ -25,6 +26,18 @@ export function Kanban() {
                 name={list.name}
                 onSubmit={p => dispatch(editList(p))}
               />
+              {
+                list.notes.map(note => {
+                  return (
+                    <Note
+                      key={note}
+                      list={list.name}
+                      onSubmit={p => dispatch(editNote(p))}
+                      note={note}
+                    />
+                  );
+                })
+              }
             </div>
           );
         })

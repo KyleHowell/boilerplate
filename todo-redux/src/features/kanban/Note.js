@@ -1,20 +1,22 @@
 import React from 'react';
 import styles from './Kanban.module.css';
 
-export default class ListHeader extends React.Component {
+export default class Note extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       editing: false,
-      name: this.props.name
+      note: this.props.note,
+      oldNote: this.props.note,
     };
   }
 
   onFinishedEditing = e => {
     e.preventDefault();
     this.props.onSubmit({
-      'newName': this.state.name,
-      'oldName': this.props.name
+      'newNote': this.state.note,
+      'listName': this.props.list,
+      'oldNote': this.props.note,
     });
     this.setState({editing: false});
   }
@@ -28,14 +30,14 @@ export default class ListHeader extends React.Component {
           className={headerClass}
           onClick={() => this.setState({editing: true})}
         >
-          {this.props.name}
+          {this.props.note}
         </div>
         <form onSubmit={this.onFinishedEditing}>
           <input
             className={inputClass}
             onBlur={this.onFinishedEditing}
-            onChange={e => this.setState({name: e.target.value})}
-            value={this.state.name}
+            onChange={e => this.setState({note: e.target.value})}
+            value={this.state.note}
           />
         </form>
       </div>

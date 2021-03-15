@@ -24,9 +24,5 @@
 }
 
 .hidden {
-  visibility: hidden;
-}
-
-.list-header {
-  
+  display: none;
 }
