@@ -35,7 +35,6 @@ export default class Note extends React.Component {
         <form onSubmit={this.onFinishedEditing}>
           <input
             className={inputClass}
-            onBlur={this.onFinishedEditing}
             onChange={e => this.setState({note: e.target.value})}
             value={this.state.note}
           />

@@ -10,6 +10,7 @@ import {
 } from './kanbanSlice';
 import ListHeader from './ListHeader';
 import Note from './Note';
+import AddNote from './AddNote';
 import styles from './Kanban.module.css';
 
 export function Kanban() {
@@ -38,6 +39,7 @@ export function Kanban() {
                   );
                 })
               }
+            <AddNote list={list.name} onSubmit={p => dispatch(addNote(p))}/>
             </div>
           );
         })
