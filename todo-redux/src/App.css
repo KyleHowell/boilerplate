@@ -1,0 +1,163 @@
+body, html, #root {
+  color: #172b4d;
+  height: 100%;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  margin-right: 2px;
+}
+
+h2 {
+  font-weight: 600;
+  margin: 0 8px;
+  font-size: 16 px;
+}
+
+input {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.App {
+  text-align: center;
+  background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1439x1920/1fe7f13724715268cc67c58ab65382a0/photo-1613411278236-3f04adfb6fdb.jpg");
+  background-position: 50%;
+  background-size: cover;
+  height: auto;
+  overflow: auto;
+  height: 100%;
+}
+
+.App-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  cursor: pointer;
+  color: #5e6c84;
+  margin: 6px;
+  border-radius: 3px;
+}
+
+.button:hover {
+  background-color: #d6d5d2;
+}
+
+.list {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  background-color: #ebecf0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 330px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.closeSidebar {
+  cursor: pointer;
+  position: absolute;
+  right: 6px;
+  top: 8px;
+}
+
+.trello-logo {
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 45%;
+}
+
+.menu {
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+.seperator {
+  color: #d6d5d2;
+  padding: 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  padding-bottom: 0;
+  margin-left: 25px;
+  border-radius: 3px;
+}
+
+.sidebar-item:hover {
+  background-color: #d6d5d2;
+}
+
+.sidebar-item h2 {
+  font-size: 14px;
+}
+
+.sidebar-description {
+  color: #5e6c84;
+  padding-left: 55px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.powerup {
+  cursor: pointer;
+  height: 30px;
+  min-width: 30px;
+  color: rgb(191, 63, 191);
+  background-color: rgba(191, 63, 191, 0.49);
+  margin-right: 4px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.powerup-text {
+  background-color: #fafbfc;
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 3px;
+  width: 80%;
+  padding: 15px;
+  text-align: initial;
+}
+
+.powerup-text p {
+  color: #5e6c84;
+}
+
+.material-icons { font-size: 20px; }
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
