@@ -23,13 +23,13 @@ export default class ListHeader extends React.Component {
     const buttonClass = this.state.editing ? "hidden" : "button";
     const inputClass = this.state.editing ? "header-input" : "hidden";
     return (
-      <div className={styles.listHeader}>
-        <button
+      <div className={styles.addCard}>
+        <div
           className={buttonClass}
           onClick={() => this.setState({editing: true})}
         >
-          + Add another card
-        </button>
+          + Add a card
+        </div>
         <form onSubmit={this.onFinishedEditing}>
           <input
             className={inputClass}

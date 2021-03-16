@@ -4,7 +4,7 @@ export const kanbanSlice = createSlice({
   name: 'kanban',
   initialState: {
     sidebar: false,
-    lists: [{name: 'test', notes: ['taco', 'burrito']}, {name: 'test2', notes: []}],
+    lists: [{name: 'To Do', notes: ['Example Task 1', 'Example Task 2']}, {name: 'Doing', notes: ['WIP']}, {name: 'Done', notes: ['Complete Task 1']}],
   },
   reducers: {
     addList: (state, action) => {

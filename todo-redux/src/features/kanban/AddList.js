@@ -22,13 +22,12 @@ export default class AddList extends React.Component {
     const buttonClass = this.state.editing ? "hidden" : "button";
     const inputClass = this.state.editing ? "header-input" : "hidden";
     return (
-      <div className={styles.listHeader}>
-        <button
-          className={buttonClass}
+      <div className={styles.addListHeader}>
+        <div
           onClick={() => this.setState({editing: true})}
         >
           + Add another list
-        </button>
+        </div>
         <form onSubmit={this.onFinishedEditing}>
           <input
             className={inputClass}

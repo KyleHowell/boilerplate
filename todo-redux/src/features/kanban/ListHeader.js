@@ -31,7 +31,7 @@ export default class ListHeader extends React.Component {
     return (
       <div className={styles.listHeader}>
         <div className={headerClass}>
-          {this.props.name}
+          <h2>{this.props.name}</h2>
           <div className={styles.actionButtons}>
             <button onClick={() => this.setState({editing: true})}>edit</button>
             <button onClick={this.onDelete}>X</button>

@@ -1,26 +1,60 @@
+body, html, #root {
+  color: #172b4d;
+  height: 100%;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  margin-right: 2px;
+}
+
+h2 {
+  font-weight: 600;
+  margin: 0 8px;
+  font-size: 16 px;
+}
+
+input {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
 .App {
   text-align: center;
+  background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1439x1920/1fe7f13724715268cc67c58ab65382a0/photo-1613411278236-3f04adfb6fdb.jpg");
+  background-position: 50%;
+  background-size: cover;
+  height: auto;
+  overflow: auto;
+  height: 100%;
 }
 
 .App-header {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
   justify-content: center;
-  min-height: 100vh;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
+.button {
+  cursor: pointer;
+  color: #5e6c84;
+  margin: 6px;
+  border-radius: 3px;
+}
+
+.button:hover {
+  background-color: #d6d5d2;
+}
+
+.list {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
 }
 
 .hidden {
@@ -48,3 +82,14 @@
   right: 6px;
   top: 8px;
 }
+
+.trello-logo {
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 45%;
+}
+
+.material-icons { font-size: 20px; }
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }

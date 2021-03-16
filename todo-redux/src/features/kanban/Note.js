@@ -34,7 +34,7 @@ export default class Note extends React.Component {
     const headerClass = this.state.editing ? "hidden" : "list";
     const inputClass = this.state.editing ? "header-input" : "hidden";
     return (
-      <div className={styles.listHeader}>
+      <div className={styles.note}>
         <div className={headerClass}>
           <div>{this.props.note}</div>
           <div className={styles.actionButtons}>
