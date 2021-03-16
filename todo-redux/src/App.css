@@ -63,17 +63,18 @@ input {
 
 .sidebar {
   position: fixed;
-  top: 10px;
+  top: 40px;
   right: 0;
-  background-color: red;
+  background-color: #ebecf0;
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 400px;
+  width: 330px;
   align-items: flex-start;
   flex-wrap: nowrap;
   justify-content: flex-start;
   overflow: hidden;
+  z-index: 1;
 }
 
 .closeSidebar {
@@ -88,6 +89,73 @@ input {
   position: absolute;
   top: 10px;
   left: 45%;
+}
+
+.menu {
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+.seperator {
+  color: #d6d5d2;
+  padding: 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  padding-bottom: 0;
+  margin-left: 25px;
+  border-radius: 3px;
+}
+
+.sidebar-item:hover {
+  background-color: #d6d5d2;
+}
+
+.sidebar-item h2 {
+  font-size: 14px;
+}
+
+.sidebar-description {
+  color: #5e6c84;
+  padding-left: 55px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.powerup {
+  cursor: pointer;
+  height: 30px;
+  min-width: 30px;
+  color: rgb(191, 63, 191);
+  background-color: rgba(191, 63, 191, 0.49);
+  margin-right: 4px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.powerup-text {
+  background-color: #fafbfc;
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 3px;
+  width: 80%;
+  padding: 15px;
+  text-align: initial;
+}
+
+.powerup-text p {
+  color: #5e6c84;
 }
 
 .material-icons { font-size: 20px; }
